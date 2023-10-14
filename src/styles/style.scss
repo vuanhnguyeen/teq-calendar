@@ -1,0 +1,284 @@
+.input-text-group{
+  input, textarea{
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: revert;
+  }
+}
+.input-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.input-ele{
+  padding: 5px;
+  margin: 5px 0;
+  width: 100%;
+}
+
+.calendar {
+  width: 100%;
+  margin: 30px auto 0;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 6px;
+  position: relative;
+  z-index: 1;
+
+  .calendar-i {
+    position: absolute;
+    top: -30px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .list-custome {
+    position: absolute;
+    top: 43px;
+    background-color: #fff;
+    width: 100%;
+    height: 240px;
+    font-size: 13px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    &_block-m {
+      height: calc(210px / 4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        cursor: pointer;
+        color: blue;
+      }
+    }
+
+    &_block-y {
+      height: calc(175px / 4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        cursor: pointer;
+        color: blue;
+      }
+    }
+  }
+
+  .tooltipcus {
+    position: relative;
+
+    &:hover {
+      .i-remove {
+        display: block;
+      }
+    }
+  }
+
+  .invalid-calendar-message {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    z-index: 11;
+  }
+
+  .invalid-calendar-input {
+    border-color: #FF0000;
+  }
+
+  .calendar-require-input-icon {
+    position: absolute;
+    top: -30px;
+    right: 3px;
+    color: #FF0000;
+    z-index: 10;
+    font-weight: normal;
+  }
+
+  /* tooltipcus text */
+  .tooltipcus .tooltipcustext {
+    visibility: hidden;
+    width: max-content;
+    background-color: hsla(0, 0%, 20%, 0.9);
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    padding: 3px 5px;
+    border-radius: 6px;
+    font-size: 13px;
+
+    /* Position the tooltipcus text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: -58px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Show the tooltipcus text when you mouse over the tooltipcus container */
+  .tooltipcus:hover .tooltipcustext {
+    visibility: visible;
+  }
+
+  .i-remove {
+    display: none;
+    position: absolute;
+    top: -24px;
+    right: 10px;
+  }
+
+  .form-input[readonly] {
+    background-color: #fff;
+  }
+}
+
+.invalid-calendar {
+  margin-top: 50px;
+}
+
+.header-c {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 6px 6px 0 0;
+  color: #000000d9;
+  border-bottom: 1px solid #f0f0f0;
+  height: auto;
+  min-height: 43px;
+}
+
+.nav-btn {
+  width: auto;
+  height: 30px;
+  border: none;
+  outline: 0;
+  background-color: transparent;
+  color: #cccccc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+
+  &:hover {
+    color: #5755d9;
+  }
+}
+
+.datetime {
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: 600;
+
+  span {
+    &:hover {
+      cursor: pointer;
+      color: blue;
+    }
+  }
+}
+
+.body-c {
+  padding: 15px 12px;
+  font-size: 12px;
+}
+
+.week-container,
+.day-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+
+.week-cell {
+  flex: 0 0 calc(100% / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day-cell {
+  flex: 0 0 calc(100% / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+
+  &:hover {
+    border: 1px solid #5755d9;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.day-cell {
+  position: relative;
+  height: 36.56px;
+
+  &--faded {
+    opacity: 0.4;
+  }
+
+  &--today {
+    border-radius: 2px;
+    background-color: #5755d9;
+
+    span {
+      font-weight: bold;
+    }
+
+    .text-main {
+      color: #fff;
+    }
+
+    .text-lunar {
+      color: #fff;
+    }
+  }
+}
+
+.text-lunar {
+  color: #c20000;
+  position: absolute;
+  bottom: 0;
+  right: 3px;
+  font-size: 8px;
+}
+
+.text-main {
+  font-size: 15px;
+}
+
+.picker {
+  &-show {
+    z-index: 5;
+    display: block;
+    animation: fadeIn 0.3s;
+    width: 280px;
+    position: fixed;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  &-hide {
+    display: none;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

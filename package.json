@@ -6,14 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next build && next export",
     "lint": "eslint . --fix --max-warnings=0",
     "format": "prettier --write --ignore-unknown",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@types/lodash.range": "^3.2.7",
+    "dayjs": "^1.11.10",
+    "lodash.range": "^3.2.0",
     "next": "13.5.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sass": "^1.69.3",
+    "spectre.css": "^0.5.9"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
